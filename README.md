@@ -3,7 +3,7 @@ O sistema deverá ser uma aplicação WEB, conter um banco de dados estruturado 
 O processo de desenvolvimento deverá ser gravado e não apenas a apresentação do produto final.
 
 São requisitos funcionais da aplicação:
-# Crud ClientE
+# Crud Cliente
 - Email
 - Nome
 - CNPJ
@@ -38,7 +38,7 @@ reposicionamento, pesagem, scanner)
 Clone ou faça download do projeto
 
 ```sh
-https://github.com/Ssousuke/CrudContainer.git
+https://github.com/Ssousuke/crud-container.git
 ```
 
 
