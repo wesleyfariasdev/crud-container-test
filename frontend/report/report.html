@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if type_movement %}
+<h3>{{ client_report }}</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Container</th>
+        <th scope="col">Tipo de movimentação</th>
+        <th scope="col">Data de inicial</th>
+        <th scope="col">Data de final</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for movement in type_movement %}
+    <tr>
+        <th scope="row"> {{ movement.id }}</th>
+        <td> {{ movement.container }}</td>
+        <td> {{ movement.type_movement }}</td>
+        <td> {{ movement.initial_date }}</td>
+        <td> {{ movement.finish_date }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h3>Importação / Exportação</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Container</th>
+        <th scope="col">Tipo de container</th>
+        <th scope="col">Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cont in container %}
+    <tr>
+        <th scope="row">{{ cont.id }}</th>
+        <td> {{cont.container_number}}</td>
+        <td>{{ cont.type }}</td>
+        <td>{{ cont.category }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<h3>Total de Importação / Exportação</h3>
+<div class="card">
+    <div class="card-body">
+        <p>Exportação: {{ number_exports }}</p>
+        <p>Importação: {{ number_imports}}</p>
+    </div>
+</div>
+{% else %}
+Não exite movimentação pra esse cliente!
+{% endif %}
+{% endblock content %}

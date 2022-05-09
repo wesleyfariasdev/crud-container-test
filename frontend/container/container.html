@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'container:create_container'%}" class="btn btn-primary"> Adicionar</a>
+{% if containers %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Container</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Status</th>
+        <th scope="col">Ação</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for container in containers %}
+    <tr>
+        <th scope="row"> {{ container.id }}</th>
+        <td> {{ container.client }}</td>
+        <td> {{ container.container_number }}</td>
+        <td> {{ container.type }}</td>
+        <td> {{ container.status }}</td>
+        <td>
+        <a href="{% url 'container:update_container' container.pk%}">Alterar</a>
+        <a href="{% url 'container:delete_container' container.pk%}">Deletar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-primary" role="alert">
+    Você ainda não tem clientes cadastrados.
+</div>
+{% endif %}
+{% endblock content %}

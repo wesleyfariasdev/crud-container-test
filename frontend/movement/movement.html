@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'movement:create_movement'%}" class="btn btn-primary"> Adicionar</a>
+{% if movements %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Container</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Data inicial</th>
+        <th scope="col">Data final</th>
+        <th scope="col">Ação</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for movement in movements %}
+    <tr>
+        <th scope="row"> {{ movement.id }}</th>
+        <td> {{ movement.container }}</td>
+        <td> {{ movement.type_movement }}</td>
+        <td> {{ movement.initial_date }}</td>
+        <td> {{ movement.finish_date }}</td>
+        <td>
+        <a href="{% url 'movement:update_movement' movement.pk%}">Alterar</a>
+        <a href="{% url 'movement:delete_movement' movement.pk%}">Deletar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-primary" role="alert">
+    Você ainda não tem clientes cadastrados.
+</div>
+{% endif %}
+{% endblock content %}
