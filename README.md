@@ -59,14 +59,6 @@ Instale as dependencias
 pip install -r requirements.txt
 ```
 
-### Crie um arquivo .env
-
-dentro desse arquivo coloque as variaveis ambiente relacionadas ao django e ao banco de dados que vai usar
-```sh
-SECRET_KEY
-DEBUG
-...
-```
 ## Migrações
 
 Após a configuração do ambiente, você pode em seguida fazer o processo de migração.
