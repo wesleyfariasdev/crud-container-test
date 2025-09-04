@@ -2,6 +2,10 @@
 O sistema deverá ser uma aplicação WEB, conter um banco de dados estruturado (SQL) e tecnologias e ferramentas utilizados ficam a critério do(a) candidato(a).
 O processo de desenvolvimento deverá ser gravado e não apenas a apresentação do produto final.
 
+[https://www.youtube.com/watch?v=tN-DIoBrH_w] - [Processo de desenvolvimento documento em vídeo]
+
+
+
 São requisitos funcionais da aplicação:
 # Crud Cliente
 - Email
